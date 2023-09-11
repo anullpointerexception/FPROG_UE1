@@ -62,7 +62,7 @@ int main() {
     const double c = 5;
     display_message("Triangle sides: a = " + std::to_string(a) + ", b = " + std::to_string(b) + ", c = " + std::to_string(c) + "\n");
 
-    std::tuple<double, double> info = calculate_area_and_radii(a, b, c);
+    const std::tuple<double, double> info = calculate_area_and_radii(a, b, c);
     display_message("Inradius: " + std::to_string(std::get<0>(info)) + "\n");
     display_message("Circumradius: " + std::to_string(std::get<1>(info)) + "\n");
 
