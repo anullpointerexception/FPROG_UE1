@@ -15,15 +15,15 @@ void display_message(const std::string& msg){
 
 int square(const int e) // Pure function
 {
-    int dummy = e;
-    int dummy2 = e;
+    const int dummy = e;
+    const int dummy2 = e;
 
     // Create a vector containing values from 1 to dummy2 - 1
     std::vector<double> values(dummy2 - 1);
     iota(values.begin(), values.end(), 1);
 
     // Use std::accumulate to sum all values in the vector and add 'e' to the result
-    int result = accumulate(values.begin(), values.end(), e);
+    const int result = accumulate(values.begin(), values.end(), e);
 
     return result;
 }
