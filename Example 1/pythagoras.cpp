@@ -38,22 +38,22 @@ int square_recursive(const int e, const int dummy, const int dummy2, int i = 1, 
 
 */
 
-int square(const int e) // Pure function
+const int square(const int e) // Pure function
 {
-    int dummy = e;
-    int dummy2 = e;
+    const int dummy = e;
+    const int dummy2 = e;
 
     // Create a vector containing values from 1 to dummy2 - 1
     vector<double> values(dummy2 - 1);
     iota(values.begin(), values.end(), 1);
 
     // Use std::accumulate to sum all values in the vector and add 'e' to the result
-    int result = accumulate(values.begin(), values.end(), e);
+    const int result = accumulate(values.begin(), values.end(), e);
 
     return result;
 }
 
-double squareroot(const double x) // Pure function
+const double squareroot(const double x) // Pure function
 {
     if (x == 0)
         return 0;
@@ -61,7 +61,7 @@ double squareroot(const double x) // Pure function
     double xhi = x;
     double xlo = 0;
     double guess = x / 2;
-    double epsilon = 0.00001;
+    const double epsilon = 0.00001;
 
     while (abs(guess * guess - x) > epsilon)
     {
@@ -79,7 +79,7 @@ double squareroot(const double x) // Pure function
     return guess;
 }
 
-double pythagoras(const int x, const int y) // Pure function
+const double pythagoras(const int x, const int y) // Pure function
 {
     const int xSquared = square(x);
     const int ySquared = square(y);
@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
 {
     const int x = 3;
     const int y = 4;
-    const double z = pythagoras(x, y);
+    double z = pythagoras(x, y);
     display_message("z: " + to_string(z) + "\n");
     return 0;
 }
